@@ -1,8 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
 int input()
 {
   int a;
-  printf("enter numner\n");
+  printf("enter the comparing value\n");
   scanf("%d",&a);
   return a;
 }
@@ -14,18 +14,19 @@ int cmp(int a,int b,int c)
   return b;
   else
   return c;
-  }
-  int output(int big)
-  {
-    printf("bigger number is %d",big);
-  }
+}
+void output(int big)
+{
+  printf("bigger value among three is %d",big);
+}
 int main()
 {
-  int x,y,z,big;
-  x=input();
-  y=input();
-  z=input();
-  big=cmp(x,y,z);
+  int a,b,c,big;
+  a=input();
+  b=input();
+  c=input();
+  big=cmp(a,b,c);
   output(big);
   return 0;
-}
+
+  }
