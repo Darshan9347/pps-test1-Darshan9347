@@ -1,34 +1,28 @@
-#include<stdio.h>
-int input()
+#include <stdio.h>
+int input(int *a,int *b,int *c)
 {
-  int a;
-  printf("enter value of a\n");
-  scanf("%d",&a);
-  return a ;
-  }
-int add (int a,int b)
-{ 
- int sum ;
-  sum=a+b;
-  return sum;
-  }
+  printf("enter 3 numbers\n");
+  scanf("%d%d%d",a,b,c);
+}
+int cmp(int a,int b,int c,int *big)
 
-int output(int sum)  
 {
-printf ("sum is:%d",sum);
-
+  if((a>b)&(a>c))
+    *big=a;
+  else if((b>a)&(b>c))
+    *big=b;
+  else
+*big=c;
+}
+int output(int big)
+{
+  printf("biggest number is %d",big);
 }
 int main()
 {
-int a,b,sum;
-a=input();
-b=input();
-sum=add (a,b);
-output (sum);
-return 0;
-  }
-
-    
-    
-  
-
+  int x,y,z,big;
+  input(&x,&y,&z);
+  cmp(x,y,z,&big);
+  output(big);
+  return 0;
+}
