@@ -1,39 +1,36 @@
 #include<stdio.h>
-int input()
+float input()
 {
-  int n;
-  printf("enter n\n");
-  scanf("%d",&n);
+  float n;
+  printf("enter a number=\n");
+  scanf("%f",&n);
   return n;
 }
-int aray(int n,int a[10])
+float my_sqrt(float n)
 {
-  int i;
-  for(i=0;i<n;i++)
-  { 
-    printf("enter array number\n");
-    scanf("%d",&a[i]);
-  }
-}
-int add(int n,int a[10])
-{
-  int i,sum=0;
-  for(i=0;i<n;i++)
+  float sqrt_result;
+  sqrt_result=n/2;
+  float root=0;
+  while(sqrt_result!=root)
   {
-  sum=sum+a[i];
+   root=sqrt_result;
+   sqrt_result=(n/root+root)/2;
+  }
+  return sqrt_result;
 }
-return sum;
-}
-int output(int sum)
+void output(float n, float sqrt_result)
 {
-  printf("sum is %d",sum);
+  int j,k;
+  j=n;
+  k=sqrt_result;
+  printf("square root of %d=%d\n",j,k);
 }
 int main()
 {
-  int n,a[10],sum,i;
+  float n,sqrt_result;
   n=input();
-  aray(n,a);
-  sum=add(n,a);
-  output(sum);
+  sqrt_result=my_sqrt(n);
+  output(n,sqrt_result);
   return 0;
+  
 }
