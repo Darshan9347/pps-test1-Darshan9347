@@ -1,33 +1,30 @@
-#include<stdio.h>
-void input(int *a, int *b,int *c)
+#include <stdio.h>
+ int input()
 {
-  printf("enter the value\n");
-  scanf("%d %d %d",a,b,c);
+  int n;
+  printf("enter value of n \n");
+  scanf("%d",&n);
+  return n;
 }
-void cmp(int a,int b,int c,int *large)
+int add(int n)
 {
-   if(a>b && a>c)
-  {
-   *large=a;
+  int sum=0,i;
+  for(i=1;i<=n;i++)
+    {
+      sum=sum+i;
+    }
+  return sum;
   }
-  else if(b>c && b>a)
- {
-   *large=b;
- } 
- else
- {
-   *large=c;
- }
-}
-void output(int a,int b,int c,int large)
+int output(int sum)
 {
-  printf("large value %d",large);
-}
+  printf("sum is %d",sum); 
+  }
 int main()
+
 {
-int a,b,c,large;
-input(&a,&b,&c);
-cmp(a,b,c,&large);
-output(a,b,c,large);
-return 0;
-}
+  int n,sum;
+  n=input();
+  sum=add(n);
+  output(sum);
+  return 0;
+  }
